@@ -25,12 +25,14 @@ SECRET_KEY = '^**r@rd)3=t2o3u3pa0fwef)me)+xhbq(^_=*@a!w$lf-odtaj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.100']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'vulnerability.apps.VulnerabilityConfig',
+    'report.apps.ReportConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
