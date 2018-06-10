@@ -20,17 +20,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'a7l=*y_&+xt+id&0em5f5tct@i**^y0mknj&(4pa-a4kujnz0s'
+SECRET_KEY = '&e#xuc-d7*o#th*jr^wdun!__k65eylgu)$bn$l^i_10c079o3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.101']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.recognition',
+    'apps.report',
+    'apps.vulnerability',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'vikingreport.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,4 +120,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+MEDIA_ROOT = (os.path.join(BASE_DIR, 'media/images/upload'),)
+
+MEDIA_URL = '/upload/'
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
